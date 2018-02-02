@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/colorWhite"
+android:padding="10dp"
+    android:layout_height="wrap_content">
+    <ImageView
+
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/main_title_info"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:text="输入查询的商品名称"
+        android:drawableLeft="@drawable/search"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:background="@drawable/searchbox"
+        android:layout_width="0dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:textSize="18sp"
+        android:text="搜索"
+        android:textColor="#961f23"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/main_title_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal">
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/labelbar"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="bottom"
+            android:src="@drawable/pattern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/home_button_selector"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rb_felicity"
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/felicity_button_selector"
+            android:text="幸福家园" />
+
+        <RadioButton
+            android:id="@+id/rb_shopping"
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/shopping_button_selector"
+            android:paddingTop="10dp"
+            android:text="商城" />
+        <RadioButton
+            android:id="@+id/rb_cart"
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/cart_button_selector"
+            android:text="购物车" />
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/MainButtonStyle"
+            android:drawableTop="@drawable/my_button_selector"
+            android:text="我的" />
+        <ImageView
+            android:layout_gravity="bottom"
+            android:src="@drawable/pattern2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+</LinearLayout>

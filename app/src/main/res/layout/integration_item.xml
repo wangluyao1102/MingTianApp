@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <View
+        android:background="#ebebeb"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/decorateleft" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="积分商城"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/decoratetheright" />
+    </LinearLayout>
+
+    <GridView
+        android:layout_margin="10dp"
+        android:id="@+id/gv_sp_list"
+        android:layout_width="match_parent"
+        android:layout_height="445dp"
+        android:layout_marginTop="10dp"
+        android:horizontalSpacing="10dp"
+        android:layout_marginBottom="5dp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp"></GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/bt_home_website"
+            android:background="@drawable/home_button_style"
+            android:text="查看更多"
+            android:textColor="#8a0006"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+</LinearLayout>

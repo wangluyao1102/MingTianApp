@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.youth.banner.Banner xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/br_home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:text="今日头条:"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <com.yundang.mingtian.util.MyTextView
+            android:id="@+id/mv_home_todayNewsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="揭秘长寿的法则  开启幸福明天优生活 明天集团欢迎您"
+            android:textColor="#858585"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#ebebeb"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="#161616"></View>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="34dp"
+                android:src="@drawable/home_listtype" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="明天介绍"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/home_listtype" />
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="#161616"></View>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_home_introduceContent"
+            android:textColor="#666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4sp"
+            android:text="    致力成就“中国养生养老第一品牌”的宏伟目标。致力成就“中国养生养老第一品牌”的宏伟目标。致力成就“中国养生养老第一品牌”的宏伟目标..." />
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/bt_home_website"
+            android:background="@drawable/home_button_style"
+            android:text="进入官网"
+            android:textColor="#8a0006"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#ebebeb"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="#161616"></View>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/home_listtype" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="明天动态与热点"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/home_listtype" />
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="#161616"></View>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

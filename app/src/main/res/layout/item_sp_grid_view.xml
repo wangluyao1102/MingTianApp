@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="180dp"
+    android:layout_height="180dp">
+    <ImageView
+        android:id="@+id/iv_sp_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center" />
+    <TextView
+        android:background="#7fdbdbdb"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tv_sp_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="3dp"
+        android:text="￥88.00"
+        android:textColor="#ff4242" />
+</RelativeLayout>
+
+    <TextView
+       android:id="@+id/tv_sp_name"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="新品茶叶"
+        android:textColor="#000000" />
+
+</LinearLayout>
