@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MingTianApp.iml" filepath="$PROJECT_DIR$/MingTianApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttpserver/okhttpserver.iml" filepath="$PROJECT_DIR$/okhttpserver/okhttpserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttputils_libray/okhttputils_libray.iml" filepath="$PROJECT_DIR$/okhttputils_libray/okhttputils_libray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/www.iml" filepath="$PROJECT_DIR$/www.iml" />
     </modules>
   </component>
 </project>
