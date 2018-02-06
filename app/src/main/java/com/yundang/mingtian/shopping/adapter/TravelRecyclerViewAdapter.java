@@ -82,7 +82,7 @@ public class TravelRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 
         public void setData(int position) {
             ResultBeanData.ResultBean.TravelInfoBean.ListBean listBean = list.get(position);
-            Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
+            Glide.with(mContext).load(AppNetConfig.BASE_URL_IMG + listBean.getFigure()).into(ivFigure);
         }
     }
 

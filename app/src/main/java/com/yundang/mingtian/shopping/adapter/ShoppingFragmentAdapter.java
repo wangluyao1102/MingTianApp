@@ -99,7 +99,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
                 @Override
                 public void OnLoadImage(ImageView view, Object url) {
                     //联网请求图片glide
-                    String s = AppNetConfig.BASE_URL+ url;
+                    String s = AppNetConfig.BASE_URL_IMG+ url;
                     System.out.println(s);
                     Glide.with(mContext).load(s).into(view);
                 }

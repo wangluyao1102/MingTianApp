@@ -62,7 +62,7 @@ public class SPGridViewAdapter extends BaseAdapter {
 
         ResultBeanData.ResultBean.SPInfoBean.ListBean spInfoBean = list.get(position);
         Glide.with(mContext)
-                .load(AppNetConfig.BASE_URL + "img" +spInfoBean.getFigure())
+                .load(AppNetConfig.BASE_URL_IMG +spInfoBean.getFigure())
                 .into(holder.ivSpImage);
         holder.tvSpName.setText(spInfoBean.getName());
         holder.tvSpPrice.setText("￥" + spInfoBean.getPrice());

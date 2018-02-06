@@ -81,7 +81,7 @@ public class HealthcareRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
 
         public void setData(int position) {
             ResultBeanData.ResultBean.HealthcareInfoBean.ListBean listBean = list.get(position);
-            Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
+            Glide.with(mContext).load(AppNetConfig.BASE_URL_IMG + listBean.getFigure()).into(ivFigure);
         }
     }
 

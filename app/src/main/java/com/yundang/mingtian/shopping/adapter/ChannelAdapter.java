@@ -55,7 +55,7 @@ public class ChannelAdapter extends BaseAdapter {
         }
         //根据位置得到对应的数据
         ResultBeanData.ResultBean.ChannelInfoBean channelInfoBean=datas.get(position);
-        Glide.with(mContext).load(AppNetConfig.BASE_URL+channelInfoBean.getImage()).into(viewHolder.iv_icon);
+        Glide.with(mContext).load(AppNetConfig.BASE_URL_IMG+channelInfoBean.getImage()).into(viewHolder.iv_icon);
         viewHolder.tv_title.setText(channelInfoBean.getChannel_name());
         return convertView;
     }

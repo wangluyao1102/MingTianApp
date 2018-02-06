@@ -61,7 +61,7 @@ public class IntegrationGridViewAdapter extends BaseAdapter {
 
         ResultBeanData.ResultBean.IntegrationBean.ListBean integrationBean = list.get(position);
         Glide.with(mContext)
-                .load(AppNetConfig.BASE_URL + "img" +integrationBean.getFigure())
+                .load(AppNetConfig.BASE_URL_IMG  +integrationBean.getFigure())
                 .into(holder.ivSpImage);
         holder.tvSpName.setText(integrationBean.getName());
         holder.tvSpPrice.setText("￥" + integrationBean.getPrice());
