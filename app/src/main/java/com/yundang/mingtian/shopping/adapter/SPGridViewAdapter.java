@@ -25,21 +25,23 @@ public class SPGridViewAdapter extends BaseAdapter {
 
 
     private Context mContext;
-    private List<ResultBeanData.ResultBean.HotInfoBean> data;
+    private ResultBeanData.ResultBean.SPInfoBean data;
+    private List<ResultBeanData.ResultBean.SPInfoBean.ListBean> list;
 
-    public SPGridViewAdapter(Context mContext, List<ResultBeanData.ResultBean.HotInfoBean> data) {
+    public SPGridViewAdapter(Context mContext, ResultBeanData.ResultBean.SPInfoBean data) {
         this.mContext = mContext;
         this.data = data;
+        this.list=data.getList();
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return list.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return data.get(position);
+        return list.get(position);
     }
 
     @Override
@@ -58,12 +60,12 @@ public class SPGridViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        ResultBeanData.ResultBean.HotInfoBean hotInfoBean = data.get(position);
+        ResultBeanData.ResultBean.SPInfoBean.ListBean spInfoBean = list.get(position);
         Glide.with(mContext)
-                .load(AppNetConfig.BASE_URL + "img" +hotInfoBean.getFigure())
+                .load(AppNetConfig.BASE_URL + "img" +spInfoBean.getFigure())
                 .into(holder.ivSpImage);
-        holder.tvSpName.setText(hotInfoBean.getName());
-        holder.tvSpPrice.setText("￥" + hotInfoBean.getCover_price());
+        holder.tvSpName.setText(spInfoBean.getName());
+        holder.tvSpPrice.setText("￥" + spInfoBean.getPrice());
         return convertView;
 
 

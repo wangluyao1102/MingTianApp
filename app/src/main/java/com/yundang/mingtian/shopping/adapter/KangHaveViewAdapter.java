@@ -26,13 +26,11 @@ public class KangHaveViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
 
     private Context mContext;
-    private ResultBeanData.ResultBean.SeckillInfoBean data;
-    private List<ResultBeanData.ResultBean.SeckillInfoBean.ListBean> list;
+    private ResultBeanData.ResultBean.KanghavelInfoBean data;
+    private List<ResultBeanData.ResultBean.KanghavelInfoBean.ListBean> list;
 
 
-
-
-    public KangHaveViewAdapter(Context mContext, ResultBeanData.ResultBean.SeckillInfoBean data) {
+    public KangHaveViewAdapter(Context mContext, ResultBeanData.ResultBean.KanghavelInfoBean data) {
         this.mContext = mContext;
         this.data = data;
         list = data.getList();
@@ -80,7 +78,7 @@ public class KangHaveViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         public void setData(int position) {
-            ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = list.get(position);
+            ResultBeanData.ResultBean.KanghavelInfoBean.ListBean listBean = list.get(position);
             Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
         }
     }

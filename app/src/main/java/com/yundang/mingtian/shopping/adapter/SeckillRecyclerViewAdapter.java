@@ -78,7 +78,6 @@ public class SeckillRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             tvCoverPrice.setText("￥" + listBean.getCover_price());
             tvOriginPrice.setText("￥" + listBean.getOrigin_price());
             Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
-
         }
     }
 

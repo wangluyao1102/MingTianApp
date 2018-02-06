@@ -4,7 +4,7 @@ package com.yundang.mingtian.common;
  * 配置网络请求相关的地址
  */
 public class AppNetConfig {
-     public static final String IPADDRESS = "47.100.23.222";
+   public static final String IPADDRESS = "47.100.23.222";
     //public static final String IPADDRESS = "192.168.3.123";
     public static final String BASE_URL = "http://" + IPADDRESS + ":8080/MingTianAppServer/";
     public static final String BASE_SERVER_SPLASH = BASE_URL+"images/splash.png";

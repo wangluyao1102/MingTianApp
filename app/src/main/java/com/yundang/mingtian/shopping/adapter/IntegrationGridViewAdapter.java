@@ -25,21 +25,22 @@ public class IntegrationGridViewAdapter extends BaseAdapter {
 
 
     private Context mContext;
-    private List<ResultBeanData.ResultBean.HotInfoBean> data;
-
-    public IntegrationGridViewAdapter(Context mContext, List<ResultBeanData.ResultBean.HotInfoBean> data) {
+    private ResultBeanData.ResultBean.IntegrationBean data;
+    private List<ResultBeanData.ResultBean.IntegrationBean.ListBean> list;
+    public IntegrationGridViewAdapter(Context mContext, ResultBeanData.ResultBean.IntegrationBean data) {
         this.mContext = mContext;
         this.data = data;
+        this.list=data.getList();
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return list.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return data.get(position);
+        return list.get(position);
     }
 
     @Override
@@ -58,12 +59,12 @@ public class IntegrationGridViewAdapter extends BaseAdapter {
             holder = (SPGridViewAdapter.ViewHolder) convertView.getTag();
         }
 
-        ResultBeanData.ResultBean.HotInfoBean hotInfoBean = data.get(position);
+        ResultBeanData.ResultBean.IntegrationBean.ListBean integrationBean = list.get(position);
         Glide.with(mContext)
-                .load(AppNetConfig.BASE_URL + "img" +hotInfoBean.getFigure())
+                .load(AppNetConfig.BASE_URL + "img" +integrationBean.getFigure())
                 .into(holder.ivSpImage);
-        holder.tvSpName.setText(hotInfoBean.getName());
-        holder.tvSpPrice.setText("￥" + hotInfoBean.getCover_price());
+        holder.tvSpName.setText(integrationBean.getName());
+        holder.tvSpPrice.setText("￥" + integrationBean.getPrice());
         return convertView;
 
 

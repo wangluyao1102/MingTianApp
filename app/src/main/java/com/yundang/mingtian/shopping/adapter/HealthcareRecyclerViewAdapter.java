@@ -26,13 +26,13 @@ public class HealthcareRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
 
 
     private Context mContext;
-    private ResultBeanData.ResultBean.SeckillInfoBean data;
-    private List<ResultBeanData.ResultBean.SeckillInfoBean.ListBean> list;
+    private ResultBeanData.ResultBean.HealthcareInfoBean data;
+    private List<ResultBeanData.ResultBean.HealthcareInfoBean.ListBean> list;
 
 
 
 
-    public HealthcareRecyclerViewAdapter(Context mContext, ResultBeanData.ResultBean.SeckillInfoBean data) {
+    public HealthcareRecyclerViewAdapter(Context mContext, ResultBeanData.ResultBean.HealthcareInfoBean data) {
         this.mContext = mContext;
         this.data = data;
         list = data.getList();
@@ -80,7 +80,7 @@ public class HealthcareRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
         }
 
         public void setData(int position) {
-            ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = list.get(position);
+            ResultBeanData.ResultBean.HealthcareInfoBean.ListBean listBean = list.get(position);
             Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
         }
     }

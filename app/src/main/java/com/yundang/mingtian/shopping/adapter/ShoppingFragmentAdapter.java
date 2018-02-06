@@ -193,7 +193,6 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             //秒杀倒计时(单位毫秒)
             dt = Integer.valueOf(data.getEnd_time()) - Integer.valueOf(data.getStart_time());
             handler.sendEmptyMessageAtTime(0, 1000);
-
             adapter.setOnSeckillRecyclerView(new SeckillRecyclerViewAdapter.OnSeckillRecyclerView() {
                 @Override
                 public void onClick(int position) {
@@ -223,7 +222,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
 
         }
 
-        public void setData(final ResultBeanData.ResultBean.SeckillInfoBean data) {
+        public void setData(final ResultBeanData.ResultBean.TravelInfoBean data) {
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             TravelRecyclerViewAdapter adapter = new TravelRecyclerViewAdapter(mContext, data);
             recyclerView.setAdapter(adapter);
@@ -246,7 +245,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         }
 
 
-        public void setData(List<ResultBeanData.ResultBean.HotInfoBean> data) {
+        public void setData(ResultBeanData.ResultBean.SPInfoBean data) {
             SPGridViewAdapter adapter = new SPGridViewAdapter(mContext, data);
             sp.setAdapter(adapter);
 
@@ -268,19 +267,12 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
 
         private Context mContext;
         private RecyclerView recyclerView;
-
-
         public KangHaveViewHolder(View itemView, Context mContext) {
             super(itemView);
             this.mContext = mContext;
             recyclerView = (RecyclerView) itemView.findViewById(R.id.rv_kanghave);
         }
-
-
-        public void setData(final ResultBeanData.ResultBean.SeckillInfoBean data) {
-
-
-
+        public void setData(final ResultBeanData.ResultBean.KanghavelInfoBean data) {
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             KangHaveViewAdapter adapter = new KangHaveViewAdapter(mContext, data);
             recyclerView.setAdapter(adapter);
@@ -308,7 +300,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         }
 
 
-        public void setData(List<ResultBeanData.ResultBean.HotInfoBean> data) {
+        public void setData(ResultBeanData.ResultBean.IntegrationBean data) {
             IntegrationGridViewAdapter adapter = new IntegrationGridViewAdapter(mContext, data);
             sp.setAdapter(adapter);
 
@@ -339,7 +331,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         }
 
 
-        public void setData(final ResultBeanData.ResultBean.SeckillInfoBean data) {
+        public void setData(final ResultBeanData.ResultBean.HealthcareInfoBean data) {
 
 
 
@@ -415,19 +407,19 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             seckillViewHolder.setData(resultBean.getSeckill_info());
         } else if (getItemViewType(position) == TRAVEL) {
             TravelViewHolder travelViewHolder = (TravelViewHolder) holder;
-            travelViewHolder.setData(resultBean.getSeckill_info());
+            travelViewHolder.setData(resultBean.getTravel_info());
         } else if (getItemViewType(position) == SP) {
             SPViewHolder spViewHolder = (SPViewHolder) holder;
-            spViewHolder.setData(resultBean.getHot_info());
+            spViewHolder.setData(resultBean.getSp_info());
         }else if (getItemViewType(position) == KANGHAVE) {
             KangHaveViewHolder kangHaveViewHolder = (KangHaveViewHolder) holder;
-            kangHaveViewHolder.setData(resultBean.getSeckill_info());
+            kangHaveViewHolder.setData(resultBean.getKanghavel_info());
         }else if (getItemViewType(position) == INTEGRATION) {
             IntegrationViewHolder integrationViewHolder = (IntegrationViewHolder) holder;
-            integrationViewHolder.setData(resultBean.getHot_info());
+            integrationViewHolder.setData(resultBean.getIntegration_info());
         }else if (getItemViewType(position) == HEALTHCARE) {
             HealthcareViewHolder healthcareViewHolder = (HealthcareViewHolder) holder;
-            healthcareViewHolder.setData(resultBean.getSeckill_info());
+            healthcareViewHolder.setData(resultBean.getHealthcare_info());
         }
     }
 

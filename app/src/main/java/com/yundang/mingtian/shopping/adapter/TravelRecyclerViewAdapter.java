@@ -27,13 +27,13 @@ public class TravelRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 
 
     private Context mContext;
-    private ResultBeanData.ResultBean.SeckillInfoBean data;
-    private List<ResultBeanData.ResultBean.SeckillInfoBean.ListBean> list;
+    private ResultBeanData.ResultBean.TravelInfoBean data;
+    private List<ResultBeanData.ResultBean.TravelInfoBean.ListBean> list;
 
 
 
 
-    public TravelRecyclerViewAdapter(Context mContext, ResultBeanData.ResultBean.SeckillInfoBean data) {
+    public TravelRecyclerViewAdapter(Context mContext, ResultBeanData.ResultBean.TravelInfoBean data) {
         this.mContext = mContext;
         this.data = data;
         list = data.getList();
@@ -81,7 +81,7 @@ public class TravelRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
         }
 
         public void setData(int position) {
-            ResultBeanData.ResultBean.SeckillInfoBean.ListBean listBean = list.get(position);
+            ResultBeanData.ResultBean.TravelInfoBean.ListBean listBean = list.get(position);
             Glide.with(mContext).load(AppNetConfig.BASE_URL + "img" + listBean.getFigure()).into(ivFigure);
         }
     }
