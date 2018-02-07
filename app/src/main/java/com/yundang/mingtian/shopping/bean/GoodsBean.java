@@ -9,20 +9,25 @@ import java.io.Serializable;
 public class GoodsBean implements Serializable {
 
     private String name;
-    private String cover_price;
+    private String price;
     private String figure;
     private String product_id;
+    private String product_type;
+    private String remark;
     private int number = 1;
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     //是否被选中
     private boolean isSelected=true;
 
-    public boolean isSelected() {
-        return isSelected;
-    }
 
-    public void setSelected(boolean selected) {
-        isSelected = selected;
-    }
 
     /**
      * 是否处于编辑状态
@@ -36,12 +41,32 @@ public class GoodsBean implements Serializable {
     public GoodsBean() {
     }
 
-    public GoodsBean(String name, String cover_price, String figure, String product_id) {
+    public GoodsBean(String name, String price, String figure, String product_id,String product_type,String remark) {
         this.name = name;
-        this.cover_price = cover_price;
+        this.price = price;
         this.figure = figure;
         this.product_id = product_id;
+        this.product_type=product_type;
+        this.remark=remark;
+
     }
+
+
+
+    @Override
+    public String toString() {
+        return "GoodsBean{" +
+                "name='" + name + '\'' +
+                ", cover_price='" + price + '\'' +
+                ", figure='" + figure + '\'' +
+                ", product_id='" + product_id + '\'' +
+                ", number=" + number +
+                ", isSelected=" + isSelected +
+                ", isEditing=" + isEditing +
+                ", isChildSelected=" + isChildSelected +
+                '}';
+    }
+
 
     public String getName() {
         return name;
@@ -51,13 +76,12 @@ public class GoodsBean implements Serializable {
         this.name = name;
     }
 
-    public String getCover_price() {
-        cover_price.substring(0, cover_price.length() - 1);
-        return cover_price;
+    public String getPrice() {
+        return price;
     }
 
-    public void setCover_price(String cover_price) {
-        this.cover_price = cover_price;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getFigure() {
@@ -76,20 +100,12 @@ public class GoodsBean implements Serializable {
         this.product_id = product_id;
     }
 
-    public boolean isEditing() {
-        return isEditing;
+    public String getProduct_type() {
+        return product_type;
     }
 
-    public void setIsEditing(boolean isEditing) {
-        this.isEditing = isEditing;
-    }
-
-    public boolean isChildSelected() {
-        return isChildSelected;
-    }
-
-    public void setIsChildSelected(boolean isChildSelected) {
-        this.isChildSelected = isChildSelected;
+    public void setProduct_type(String product_type) {
+        this.product_type = product_type;
     }
 
     public int getNumber() {
@@ -100,17 +116,27 @@ public class GoodsBean implements Serializable {
         this.number = number;
     }
 
-    @Override
-    public String toString() {
-        return "GoodsBean{" +
-                "name='" + name + '\'' +
-                ", cover_price='" + cover_price + '\'' +
-                ", figure='" + figure + '\'' +
-                ", product_id='" + product_id + '\'' +
-                ", number=" + number +
-                ", isSelected=" + isSelected +
-                ", isEditing=" + isEditing +
-                ", isChildSelected=" + isChildSelected +
-                '}';
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+    public boolean isEditing() {
+        return isEditing;
+    }
+
+    public void setEditing(boolean editing) {
+        isEditing = editing;
+    }
+
+    public boolean isChildSelected() {
+        return isChildSelected;
+    }
+
+    public void setChildSelected(boolean childSelected) {
+        isChildSelected = childSelected;
     }
 }

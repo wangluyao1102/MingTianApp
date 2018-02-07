@@ -48,6 +48,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".SplashActivity"/>
         <activity android:name=".home.PublicInfoActivity"/>
+        <activity android:name=".shopping.activity.GoodsInfoActivity"/>
         <activity android:name=".home.activity.PhotographActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"

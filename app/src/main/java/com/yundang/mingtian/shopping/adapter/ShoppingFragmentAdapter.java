@@ -28,6 +28,8 @@ import com.youth.banner.listener.OnLoadImageListener;
 import com.yundang.mingtian.R;
 import com.yundang.mingtian.common.AppNetConfig;
 
+import com.yundang.mingtian.shopping.activity.GoodsInfoActivity;
+import com.yundang.mingtian.shopping.bean.GoodsBean;
 import com.yundang.mingtian.shopping.bean.ResultBeanData;
 
 import java.text.SimpleDateFormat;
@@ -57,7 +59,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
     public static final int INTEGRATION = 6; //使用GridView控件
     //养生
     public static final int HEALTHCARE = 7; //使用GridView控件
-
+    public static final String GOODS_BEAN = "goods_bean";
 
     //当前类型
     private int currentType = BANNER;
@@ -99,7 +101,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
                 @Override
                 public void OnLoadImage(ImageView view, Object url) {
                     //联网请求图片glide
-                    String s = AppNetConfig.BASE_URL_IMG+ url;
+                    String s = AppNetConfig.BASE_URL_IMG + url;
                     System.out.println(s);
                     Glide.with(mContext).load(s).into(view);
                 }
@@ -110,7 +112,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
                 public void OnBannerClick(int position) {
                     if (position - 1 < banner_info.size()) {
                         int id = banner_info.get(position - 1).getGoodId();
-                        System.out.println(id);
+                        Toast.makeText(mContext, "position=" + id, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -196,7 +198,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             adapter.setOnSeckillRecyclerView(new SeckillRecyclerViewAdapter.OnSeckillRecyclerView() {
                 @Override
                 public void onClick(int position) {
-                    System.out.println(position);
+                    Toast.makeText(mContext, "position=" + position, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -233,7 +235,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
     /**************************
      * 子模块五优品专区
      ***********************************************************/
-    class SPViewHolder  extends RecyclerView.ViewHolder{
+    class SPViewHolder extends RecyclerView.ViewHolder {
 
         private Context mContext;
         private GridView sp;
@@ -253,25 +255,28 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             sp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                  Toast.makeText(mContext, "position:" + position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "position:" + position, Toast.LENGTH_SHORT).show();
 
                 }
             });
 
         }
     }
+
     /**************************
      * 子模块六康养专区
      ***********************************************************/
-    class KangHaveViewHolder  extends RecyclerView.ViewHolder{
+    class KangHaveViewHolder extends RecyclerView.ViewHolder {
 
         private Context mContext;
         private RecyclerView recyclerView;
+
         public KangHaveViewHolder(View itemView, Context mContext) {
             super(itemView);
             this.mContext = mContext;
             recyclerView = (RecyclerView) itemView.findViewById(R.id.rv_kanghave);
         }
+
         public void setData(final ResultBeanData.ResultBean.KanghavelInfoBean data) {
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             KangHaveViewAdapter adapter = new KangHaveViewAdapter(mContext, data);
@@ -279,7 +284,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             adapter.setOnKangHaveRecyclerView(new KangHaveViewAdapter.OnKangHaveRecyclerView() {
                 @Override
                 public void onClick(int position) {
-                    Toast.makeText(mContext,"Postion:"+position,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Postion:" + position, Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -288,7 +293,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
     /**************************
      * 子模块七积分商城
      ***********************************************************/
-    class IntegrationViewHolder  extends RecyclerView.ViewHolder{
+    class IntegrationViewHolder extends RecyclerView.ViewHolder {
 
         private Context mContext;
         private GridView sp;
@@ -315,10 +320,11 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
 
         }
     }
+
     /**************************
      * 子模块八养生地产
      ***********************************************************/
-    class HealthcareViewHolder  extends RecyclerView.ViewHolder{
+    class HealthcareViewHolder extends RecyclerView.ViewHolder {
 
         private Context mContext;
         private RecyclerView recyclerView;
@@ -334,27 +340,28 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         public void setData(final ResultBeanData.ResultBean.HealthcareInfoBean data) {
 
 
-
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             HealthcareRecyclerViewAdapter adapter = new HealthcareRecyclerViewAdapter(mContext, data);
             recyclerView.setAdapter(adapter);
             adapter.setOnHealthcareRecyclerView(new HealthcareRecyclerViewAdapter.OnHealthcareRecyclerView() {
                 @Override
                 public void onClick(int position) {
-                    Toast.makeText(mContext,"Postion:"+position,Toast.LENGTH_SHORT).show();
+
+                    ResultBeanData.ResultBean.HealthcareInfoBean.ListBean listBean = data.getList().get(position);
+                    String name = listBean.getName();
+                    String price = listBean.getPrice();
+                    String figure = listBean.getFigure();
+                    String remark = listBean.getRemark();
+                    String product_type = listBean.getProduct_type();
+                    String product_id = listBean.getProduct_id();
+                    GoodsBean goodsBean = new GoodsBean(name,price,figure,product_id,product_type,remark);
+                    Intent intent = new Intent(mContext, GoodsInfoActivity.class);
+                    intent.putExtra(GOODS_BEAN,goodsBean);
+                    mContext.startActivity(intent);
                 }
             });
         }
     }
-
-
-
-
-
-
-
-
-
 
 
     public ShoppingFragmentAdapter(Context mContext, ResultBeanData.ResultBean resultBean) {
@@ -362,13 +369,6 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         this.resultBean = resultBean;
         mLayoutInflater = LayoutInflater.from(mContext);
     }
-
-
-
-
-
-
-
 
 
     @Override
@@ -381,13 +381,13 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             return new SeckillViewHolder(mLayoutInflater.inflate(R.layout.seckill_item, null), mContext);
         } else if (viewType == TRAVEL) {
             return new TravelViewHolder(mLayoutInflater.inflate(R.layout.travel_item, null), mContext);
-        }else if (viewType == SP) {
+        } else if (viewType == SP) {
             return new SPViewHolder(mLayoutInflater.inflate(R.layout.sp_item, null), mContext);
-        }else if (viewType == KANGHAVE) {
+        } else if (viewType == KANGHAVE) {
             return new KangHaveViewHolder(mLayoutInflater.inflate(R.layout.kanghave_item, null), mContext);
-        }else if (viewType == INTEGRATION) {
+        } else if (viewType == INTEGRATION) {
             return new IntegrationViewHolder(mLayoutInflater.inflate(R.layout.integration_item, null), mContext);
-        }else if (viewType == HEALTHCARE) {
+        } else if (viewType == HEALTHCARE) {
             return new HealthcareViewHolder(mLayoutInflater.inflate(R.layout.healthcare_item, null), mContext);
         }
 
@@ -411,13 +411,13 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
         } else if (getItemViewType(position) == SP) {
             SPViewHolder spViewHolder = (SPViewHolder) holder;
             spViewHolder.setData(resultBean.getSp_info());
-        }else if (getItemViewType(position) == KANGHAVE) {
+        } else if (getItemViewType(position) == KANGHAVE) {
             KangHaveViewHolder kangHaveViewHolder = (KangHaveViewHolder) holder;
             kangHaveViewHolder.setData(resultBean.getKanghavel_info());
-        }else if (getItemViewType(position) == INTEGRATION) {
+        } else if (getItemViewType(position) == INTEGRATION) {
             IntegrationViewHolder integrationViewHolder = (IntegrationViewHolder) holder;
             integrationViewHolder.setData(resultBean.getIntegration_info());
-        }else if (getItemViewType(position) == HEALTHCARE) {
+        } else if (getItemViewType(position) == HEALTHCARE) {
             HealthcareViewHolder healthcareViewHolder = (HealthcareViewHolder) holder;
             healthcareViewHolder.setData(resultBean.getHealthcare_info());
         }
@@ -441,7 +441,7 @@ public class ShoppingFragmentAdapter extends RecyclerView.Adapter {
             case SP:
                 currentType = SP;
                 break;
-           case KANGHAVE:
+            case KANGHAVE:
                 currentType = KANGHAVE;
                 break;
             case INTEGRATION:

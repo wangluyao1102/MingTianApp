@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="养成地产"
+            android:text="养生地产"
             android:textSize="20dp" />
 
         <ImageView

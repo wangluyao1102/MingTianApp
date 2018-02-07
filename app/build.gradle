@@ -8,18 +8,11 @@ android {
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 18
-        versionName "2.3"
+        versionName "2.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
 
-/*    defaultConfig {
-        applicationId "com.yundang.mingtian"
-        minSdkVersion 14
-        targetSdkVersion 22
-        versionCode 18
-        versionName "1.2"
-    }*/
 
 
 
